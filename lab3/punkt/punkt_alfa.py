@@ -16,6 +16,6 @@ class Point(object):
         self.x += delta_x
         self.y += delta_y
 
-
-def distance(punkt1, punkt2):
-    return math.sqrt((punkt1.x-punkt2.x) ** 2 + (punkt1.y-punkt2.y) ** 2)
+    @staticmethod
+    def distance(punkt1, punkt2):
+        return math.sqrt((punkt1.x-punkt2.x) ** 2 + (punkt1.y-punkt2.y) ** 2)

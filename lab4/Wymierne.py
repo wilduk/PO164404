@@ -26,6 +26,9 @@ class Wymierna:
     def __float__(self):
         return self.p/self.q
 
+    def __int__(self):
+        return self.p//self.q
+
     def __add__(self, other):
         return Wymierna(self.p*other.q+other.p*self.q, self.q*other.q)
 
@@ -65,10 +68,14 @@ class Wymierna:
         return False
 
     def __mul__(self, other):
-        return Wymierna(self.p*other, self.q)
+        if type(other) == int:
+            return Wymierna(self.p * other, self.q)
+        return Wymierna(self.p * other.p, self.q * other.q)
 
     def __truediv__(self, other):
-        return Wymierna(self.p, self.q*other)
+        if type(other) == int:
+            return Wymierna(self.p, self.q*other)
+        return Wymierna(self.p * other.q, other.p * self.q)
 
 
 if __name__ == "__main__":
@@ -76,6 +83,7 @@ if __name__ == "__main__":
     dwa = Wymierna(2, 4)
     print("%d %d" % (jeden.get_licznik(), jeden.get_mianownik()))
     print("%d %d" % (dwa.get_licznik(), dwa.get_mianownik()))
-    print("%0.0f" % (jeden+dwa))
-    print(jeden/2)
+    print("%0.0f" % (float(jeden + dwa)))
+    print("%0.2f %0.2f" % (float(jeden * dwa), float(jeden / dwa)))
+    print("%0.2f %0.2f" % (jeden * 2, jeden / 2))
     assert(jeden == dwa)

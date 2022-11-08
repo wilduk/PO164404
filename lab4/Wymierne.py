@@ -122,5 +122,4 @@ if __name__ == "__main__":
     assert(trzy == 2)
     assert(trzy > 1)
     assert(trzy < 5)
-
     

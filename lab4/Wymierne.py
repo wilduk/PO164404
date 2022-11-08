@@ -129,7 +129,7 @@ if __name__ == "__main__":
     assert(jeden + dwa == 1)
     print("%0.2f %0.2f" % (float(jeden * dwa), float(jeden / dwa)))
     assert(jeden * dwa == 0.25 and jeden / dwa == 1)
-    print("%0.2f %0.2f" % (jeden * 2, jeden / 2))
+    print("%0.2f %0.2f" % (float(jeden * 2), float(jeden / 2)))
     assert(jeden * 2 == 1.0 and jeden / 2 == 0.25)
     assert(jeden == 0.5)
     assert(jeden == dwa)

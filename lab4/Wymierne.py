@@ -24,7 +24,7 @@ class Wymierna:
         return self.q
 
     def __repr__(self) -> str:
-        return str(self.p/self.q)
+        return str("%d/%d" % (self.p, self.q))
 
     def __float__(self) -> float:
         return self.p/self.q
